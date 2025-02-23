@@ -136,7 +136,7 @@ String str2 = "banana";
 String str3 = "Apple";
 String str4 = "apple";
 
-int result1 = str1.compareTo(str2); // Output:
+int result1 = str1.compareTo(str2); // Output: -1
 int result2 = str1.compareTo(str3); // Output:
 int result3 = str3.compareTo(str1); // Output:
 int result3 = str1.compareTo(str4); // Output:
@@ -211,7 +211,7 @@ String str2 = "Academy";
 
 boolean result1 = str1.endsWith("rve"); // Output:
 boolean result2 = str1.endsWith("vve"); // Output:
-boolean result3 = str3.endsWith("e"); // Output:
+boolean result3 = str1.endsWith("e"); // Output:
 boolean result3 = str1.endsWith("Code2Serve"); // Output:
 ```
 
@@ -231,8 +231,8 @@ String str2 = "Academy";
 
 boolean result1 = str1.startsWith("cod"); // Output:
 boolean result2 = str1.startsWith("Code"); // Output:
-boolean result3 = str3.startsWith("ode"); // Output:
-boolean result3 = str1.startsWith("Code2Serve"); // Output:
+boolean result3 = str1.startsWith("ode"); // Output:
+boolean result4 = str1.startsWith("Code2Serve"); // Output:
 ```
 
 ### 7. `boolean equals(String anotherString)`
@@ -256,7 +256,7 @@ String str2 = "Academy";
 
 boolean result1 = str1.equals(str2); // Output:
 boolean result2 = str1.equals("code2serve"); // Output:
-boolean result3 = str3.equals("Code2Serve"); // Output:
+boolean result3 = str1.equals("Code2Serve"); // Output:
 ```
 
 ### 8. `boolean equalsIgnoreCase(String anotherString)`
@@ -303,7 +303,7 @@ String str2 = "Academy";
 
 boolean result1 = str1.indexOf('e'); // Output:
 boolean result2 = str1.indexOf('2'); // Output:
-boolean result3 = str3.indexOf('3'); // Output:
+boolean result3 = str1.indexOf('3'); // Output:
 ```
 
 ### 9 b. `indexOf(String str)`
@@ -399,8 +399,8 @@ String result = str.replace("target", "replacement");
 String str1 = "Code2Serve";
 String str2 = "Academy";
 
-String result1 = str1.replace("2S","3S"); // Output:
-String result2 = str2.replace('AA','a'); // Output:
+String result1 = str1.replace("2S","3S"); // Output: Code3Serve
+String result2 = str2.replace("AA","a"); // Output: Academy
 ```
 
 <!-- ### `split(String regex)`
@@ -440,8 +440,8 @@ String result = str.substring(5);
 String str1 = "Code2Serve";
 String str2 = "Academy";
 
-String result1 = str1.substring(5); // Output:
-String result2 = str2.replace(0); // Output:
+String result1 = str1.substring(5); // Output: Serve
+String result2 = str2.substring(0); // Output: Academy
 ```
 
 ### 12 b. `String substring(int beginIndex, int endIndex)`
@@ -461,8 +461,8 @@ String result = str.substring(5, 10);
 String str1 = "Code2Serve";
 String str2 = "Academy";
 
-String result1 = str1.substring(5,8); // Output:
-String result2 = str2.replace(0,10); // Output:
+String result1 = str1.substring(5,8); // Output: Ser
+String result2 = str2.replace(0,10); // Output: error
 ```
 
 <!-- ### `toCharArray()`
@@ -489,8 +489,8 @@ String result = str.toLowerCase();
 String str1 = "Code2Serve";
 String str2 = "Academy";
 
-String result1 = str1.toLowerCase(); // Output:
-String result2 = str2.toLowerCase(); // Output:
+String result1 = str1.toLowerCase(); // Output: code2serve
+String result2 = str2.toLowerCase(); // Output: academy
 ```
 
 ### 14. `String toUpperCase()`
@@ -507,8 +507,8 @@ String result = str.toUpperCase();
 String str1 = "Code2Serve";
 String str2 = "Academy";
 
-String result1 = str1.toUpperCase(); // Output:
-String result2 = str2.toUpperCase(); // Output:
+String result1 = str1.toUpperCase(); // Output: CODE2SERVE
+String result2 = str2.toUpperCase(); // Output: ACADEMY
 ```
 
 ### 15. `String trim()`
@@ -551,8 +551,6 @@ int n2 = 32;
 String result1 = String.valueOf(n1); // Output:
 
 String result2 = String.valueOf(n2); // Output:
-
-String result3 = str3.trim(); // Output:
 ```
 
 ### 17. `String toString()`
@@ -569,7 +567,7 @@ String s1= sc.toString();
 
 ---
 
-# ❓ <u>Important Output base Question</u>
+# ❓ <u>Important Output based Question</u>
 
 1. ✏️ State the value of c and mantissa
 
@@ -583,8 +581,8 @@ String s1= sc.toString();
 
    ```
    Output -
-    n:
-    c:
+    c: 4
+    mantissa: 375
    ```
 
 2. ✏️ Find the output
@@ -602,7 +600,7 @@ String s1= sc.toString();
 
    System.out.println(s1.equals(s3));
 
-   System.out.println(s1.equals(s3));
+   <!-- System.out.println(s1.equals(s3)); -->
 
    System.out.println(s3== s4);
 
@@ -625,6 +623,28 @@ String s1= sc.toString();
    Sample Output: ymedacA evreS2edoC
    ```
 
+   ```java
+   import java.util.Scanner;
+
+   public class Reverse {
+
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      String rev = "";
+      char ch;
+
+      for (int i = str.length() - 1; i >= 0; i--) {
+          ch = str.charAt(i);
+          rev = rev + ch;
+      }
+
+      System.err.println(rev);
+
+    }
+   }
+   ```
+
 2. ✏️ Write a Java method to check if a string is a palindrome.
 
    ```
@@ -635,11 +655,68 @@ String s1= sc.toString();
    Sample Output: true
    ```
 
+   ```java
+      import java.util.Scanner;
+
+      public class Palindrome {
+
+      public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String rev = "";
+        char ch;
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            ch = str.charAt(i);
+            rev = rev + ch;
+        }
+
+        if (str.equals(rev)) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+
+        }
+
+      }
+
+   }
+   ```
+
 3. ✏️ Write a program to accept a string and display the text with uppercase and lowercase reversed . **[ICSE- 2008]**
 
    ```
    Sample Input:  Code2Serve Academy
    Sample Output: cODE2sERVE aCADEMY
+   ```
+
+   ```java
+    public class ReverseCase {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String res = "";
+        char ch;
+
+        for (int i = 0; i < str.length(); i++) {
+            ch = str.charAt(i);
+
+            if (ch >= 65 && ch <= 90) {
+                ch += 32;
+            } else if (ch >= 97 && ch <= 122) {
+                ch -= 32;
+            }
+
+            res += ch;
+
+        }
+
+        System.out.println(res);
+
+     }
+
+   }
    ```
 
 4. ✏️ Write a program to accept a string and change the first character of every word to upper case . **[ICSE- 2018]**
@@ -649,6 +726,44 @@ String s1= sc.toString();
    Sample Output: Code2Serve Academy Is Loved By All
    ```
 
+   ```java
+         import java.util.Scanner;
+
+          public class FirstUpper {
+
+              public static void main(String[] args) {
+                  Scanner sc = new Scanner(System.in);
+                  String str = sc.nextLine().trim();
+                  String res = "";
+                  int len = str.length();
+                  char ch, prev;
+
+                  if (len > 0) {
+                      ch = str.charAt(0);
+
+                      res += String.valueOf(ch).toUpperCase();
+                  }
+
+                  for (int i = 1; i < len; i++) {
+                      ch = str.charAt(i);
+                      prev = str.charAt(i - 1);
+
+                      if (prev == ' ') {
+                          if (ch >= 97 && ch <= 122) {
+                              ch -= 32;
+                          }
+                      }
+
+                      res += ch;
+
+                  }
+
+                  System.out.println(res);
+
+              }
+          }
+   ```
+
 5. ✏️ Write a program to accept a string and print the length of the longest word in the given string . **[ICSE- 2009]**
 
    ```
@@ -656,11 +771,68 @@ String s1= sc.toString();
    Sample Output: 10
    ```
 
-6. ✏️ Write a program to accept a string and display the number of double letter sequence in the given string . **[ICSE- 2009]**
+   ```java
+        import java.util.Scanner;
+
+        public class LongestWord {
+
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                String str = sc.nextLine();
+                int start = 0, len = str.length(), longest = 0, count = 0;
+                char ch;
+
+                for (int i = 0; i < len; i++) {
+                    ch = str.charAt(i);
+                    if (ch == ' ' || i == len - 1) {
+                        count = str.substring(start, i).length();
+
+                        if (count > longest) {
+                            longest = count;
+                        }
+                        start = i + 1;
+
+                    }
+
+                }
+
+                System.out.print(longest);
+
+            }
+        }
+
+   ```
+
+6. ✏️ Write a program to accept a string and convert the string to uppercase display the number of double letter sequence in the given string . **[ICSE- 2012]**
 
    ```
    Sample Input:  code2Serve academy is loved by all
    Sample Output: 1
+   ```
+
+   ```java
+       import java.util.Scanner;
+
+        public class DoubleCount {
+
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                String str = sc.nextLine();
+                char ch;
+                int count = 0;
+
+                for (int i = 0; i < str.length() - 1; i++) {
+                    ch = str.charAt(i);
+                    if (ch == str.charAt(i + 1)) {
+                        count++;
+                    }
+                }
+
+                System.out.println(count);
+
+            }
+        }
+
    ```
 
 7. ✏️ Write a program to accept a string and display the frequency of each character after converting all to uppercase . **[ICSE- 2010]**
@@ -670,5 +842,54 @@ String s1= sc.toString();
    Sample Output:
 
        CHARACTERS  A C D E L M O T W Y
-      FREQUENCY   2 1 1 3 2 2 2 1 1 1
+       FREQUENCY   2 2 1 3 1 2 2 1 1 1
+   ```
+
+   ```java
+
+        import java.util.Scanner;
+
+        public class Frequency {
+
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                String str = sc.nextLine();
+                //Array to store the count of each character
+                //Count for A -> index 0
+                //Count for B -> index 1
+                // ...
+                //Count for Z -> index 25
+                int arr[] = new int[26];
+                str = str.toUpperCase();
+                char ch;
+                int index;
+                //To count the freq and store the same in the array
+                for (int i = 0; i < str.length(); i++) {
+                    ch = str.charAt(i);
+                    if (ch >= 65 && ch <= 90) {
+                        index = ch - 65; //to get the index in the array to keep the count
+                        arr[index]++;
+                    }
+
+                }
+
+                //To print the characters
+                System.out.print("CHARACTERS    ");
+                for (int i = 0; i < arr.length; i++) {
+                    if (arr[i] > 0) {
+                        ch = (char) (i + 65);
+                        System.out.print(ch + " ");
+                    }
+                }
+
+                //To print the Frequency
+                System.out.print("\nFREQUENCY    "); //"\n" to first go to next line then print FREQUENCY or we can also add Sopln() above this line
+                for (int i = 0; i < arr.length; i++) {
+                    if (arr[i] > 0) {
+                        System.out.print(arr[i] + " ");
+                    }
+                }
+
+            }
+        }
    ```
